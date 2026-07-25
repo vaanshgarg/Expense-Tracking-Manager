@@ -4,6 +4,8 @@ from analytics_by_category import analytics_tab
 from analytics_by_months import analytics_month_tab
 
 
+API_URL = "https://project-expense-tracking.onrender.com/"
+
 st.set_page_config(
     page_title="Expense Tracker",
     page_icon="💰",
