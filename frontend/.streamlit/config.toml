@@ -1,9 +1,10 @@
 [theme]
-base = "dark"
+base = "light"
 
-primaryColor = "#EC4899"          # Rose Pink
-backgroundColor = "#0B1120"       # Deep Navy
-secondaryBackgroundColor = "#1E1B4B" # Indigo
-textColor = "#FDF2F8"             # Soft White
+primaryColor = "#F97316"
+backgroundColor = "#FFF8F0"
+secondaryBackgroundColor = "#FFE7D1"
+textColor = "#2C2C2C"
 
 font = "sans serif"
+

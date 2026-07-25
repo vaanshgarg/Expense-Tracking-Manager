@@ -2,7 +2,7 @@ import streamlit as st
 from datetime import datetime
 import requests
 import pandas as pd
-
+import plotly.express as px
 
 API_URL = "http://localhost:8000"
 
@@ -38,7 +38,24 @@ def analytics_tab():
 
         st.title("Expense BreakDown By Category")
 
-        st.bar_chart(data= df_sorted.set_index("Category")['Percentage'], use_container_width=True)
+        # st.bar_chart(data= df_sorted.set_index("Category")['Percentage'], use_container_width=True)
+
+        fig = px.bar(
+            df,
+            x="Category",
+            y="Percentage",
+            color="Percentage",
+            color_continuous_scale=[
+                "#FFE5B4",
+                "#FFD08A",
+                "#FFB347",
+                "#FB923C",
+                "#F97316",
+                "#EA580C"
+            ]
+        )
+
+        st.plotly_chart(fig, use_container_width=True)
 
         df_sorted["Total"] = df_sorted["Total"].map("{:.2f}".format)
         df_sorted["Percentage"] = df_sorted["Percentage"].map("{:.2f}".format)
