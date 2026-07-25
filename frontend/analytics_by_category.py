@@ -3,7 +3,7 @@ from datetime import datetime
 import requests
 import pandas as pd
 import plotly.express as px
-from app import API_URL
+from config import API_URL
 
 # API_URL = "http://localhost:8000"
 
