@@ -1,0 +1,9 @@
+[theme]
+base = "dark"
+
+primaryColor = "#EC4899"          # Rose Pink
+backgroundColor = "#0B1120"       # Deep Navy
+secondaryBackgroundColor = "#1E1B4B" # Indigo
+textColor = "#FDF2F8"             # Soft White
+
+font = "sans serif"

@@ -21,7 +21,7 @@ def analytics_tab():
             "end_date": end_date.strftime("%Y-%m-%d")
         }
 
-        response = requests.post(f"{API_URL}/analytics/", json=payload)
+        response = requests.post(f"{API_URL}/analytics/category", json=payload)
         response = response.json()
 
         data = {

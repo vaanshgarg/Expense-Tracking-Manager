@@ -19,6 +19,18 @@ class DateRange(BaseModel):
     start_date : date
     end_date : date
 
+
+class SelectedYearDate(BaseModel):
+    # selected_year_date: date
+    selected_year : int
+
+class ExpenseDate(BaseModel):
+    expense_date : date
+    amount: float
+    category: str
+    notes: str
+
+
 @app.get("/expenses/{expense_date}", response_model = List[Expense])
 def get_expenses(expense_date: date):
     expenses = db_helper.fetch_expenses_for_date(expense_date)
@@ -35,8 +47,8 @@ def add_or_update_expense(expense_date: date, expenses: List[Expense]):
     return {"message" : "Expenses updated successfully"}
 
 
-@app.post("/analytics/")
-def get_analytics(date_range: DateRange):
+@app.post("/analytics/category/")
+def get_analytics_category(date_range: DateRange):
     data = db_helper.fetch_expenses_summary(date_range.start_date, date_range.end_date)
     if data is None:
         raise HTTPException(status_code=500, detail="Failed to Retrieve Summary from the database")
@@ -50,3 +62,12 @@ def get_analytics(date_range: DateRange):
             'Percentage': percentage,
         }
     return breakdown
+
+
+@app.post("/analytics/months/")
+def get_analytics_months(date_year: SelectedYearDate):
+    data = db_helper.fetch_expenses_summary_of_all_months_in_year( date_year.selected_year )
+    if data is None:
+        raise HTTPException(status_code=500, detail="Failed to Retrieve Summary from the database")
+
+    return data

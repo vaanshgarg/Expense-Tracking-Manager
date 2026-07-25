@@ -57,17 +57,35 @@ def fetch_expenses_summary(start_date, end_date):
         data = cursor.fetchall()
         return data
 
+def fetch_expenses_summary_of_all_months_in_year(year):
+    logger.info(f"fetch_expenses_summary_of_all_months_in_year: {year}")
+    with get_db_cursor() as cursor:
+        cursor.execute("""
+            SELECT 
+                MONTH(expense_date) AS Month,
+                sum(amount) AS Total_Expenses
+            FROM expenses 
+            WHERE YEAR(expense_date) = %s 
+            GROUP BY MONTH(expense_date)
+        """, (year,))
+
+        data = cursor.fetchall()
+        return data
+
+
 if __name__ == '__main__':
     expense_date = fetch_expenses_for_date("2024-09-30")
     # for data in expense_date:
     #     print(data)
 
     # insert_expenses_for_date("2025-01-02", 20000, "Clothes", "Zara")
-    # delete_expenses_for_date("2025-01-02")
+    delete_expenses_for_date("2025-01-01")
 
-    summary = fetch_expenses_summary('2024-08-02','2024-09-03')
-    for record in summary:
-        print(record)
+    # summary = fetch_expenses_summary('2024-08-02','2024-09-03')
+    # for record in summary:
+    #     print(record)
+
+
 
 
 
