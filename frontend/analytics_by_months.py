@@ -5,7 +5,9 @@ import calendar
 import  plotly.express as px
 from app import API_URL
 
+
 # API_URL = "http://localhost:8000"
+
 
 def analytics_month_tab():
 

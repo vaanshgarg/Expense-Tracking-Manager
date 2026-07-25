@@ -7,6 +7,7 @@ from app import API_URL
 
 # API_URL = "http://localhost:8000"
 
+
 def analytics_tab():
     col1, col2 = st.columns(2)
 
