@@ -187,9 +187,11 @@ http://localhost:8501
 ```
 images/dashboard1.png
 ```
+<img width="1230" height="946" alt="dashboard1" src="https://github.com/user-attachments/assets/32467bbd-b839-42db-9429-d01ec2564bc2" />
 
 ```markdown
 ![Expense Management](images/dashboard1.png)
+
 ```
 
 ---
@@ -201,6 +203,9 @@ Save image as
 ```
 images/dashboard2.png
 ```
+<img width="1337" height="962" alt="dashboard2" src="https://github.com/user-attachments/assets/3d17cff8-ddd7-4bc4-8097-750c0d698a11" />
+
+
 
 ```markdown
 ![Category Analytics](images/dashboard2.png)
@@ -215,6 +220,7 @@ Save image as
 ```
 images/dashboard3.png
 ```
+<img width="1511" height="967" alt="dashboard3" src="https://github.com/user-attachments/assets/2de34d1a-e8f1-454f-bbc7-81774de927d9" />
 
 ```markdown
 ![Monthly Analytics](images/dashboard3.png)
