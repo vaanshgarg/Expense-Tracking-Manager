@@ -319,7 +319,7 @@ pydantic
 
 ### Connect with me
 
-- 💼 LinkedIn : https://www.linkedin.com/vaanshgarg
+- 💼 LinkedIn: https://www.linkedin.com/in/vaanshgarg/
 - ⭐ GitHub: https://www.github.com/vaanshgarg
 
 If you like this project,
